@@ -111,6 +111,12 @@ $ ./gradlew :shared:compileKotlinIosSimulatorArm64
 $ ./gradlew :shared:linkDebugFrameworkIosSimulatorArm64
 ```
 
+## Dependency Updates
+
+Dependabot checks Gradle and GitHub Actions dependencies every week and opens pull requests for
+available updates. Updates are reviewed and validated before merging; automatic merging is not
+enabled.
+
 ## Project Identity
 
 The current project identity is:
@@ -125,3 +131,7 @@ The setup script replaces these values throughout the repository.
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution guidelines.
 
 Report vulnerabilities privately as described in [`SECURITY.md`](SECURITY.md).
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE).
