@@ -2,7 +2,7 @@
 # Android & Kotlin
 androidGradlePlugin = "8.10.0"
 kotlin = "2.2.0"
-kotlinMultiplatform = "2.2.0"
+kotlinMultiplatform = "2.4.0"
 
 # AndroidX Libraries
 activityCompose = "1.10.1"
