@@ -119,3 +119,9 @@ The current project identity is:
 - Package: `com.example.kmptemplate`
 
 The setup script replaces these values throughout the repository.
+
+## Contributing And Security
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for contribution guidelines.
+
+Report vulnerabilities privately as described in [`SECURITY.md`](SECURITY.md).
