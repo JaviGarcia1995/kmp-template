@@ -2,8 +2,9 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-BASE_PACKAGE_PATH="com/example/kmptemplate"
-BASE_PACKAGE_REGEX="com\\.example\\.kmptemplate"
+BASE_PACKAGE="com.example.kmptemplate"
+BASE_PACKAGE_PATH="$(printf '%s' "$BASE_PACKAGE" | tr '.' '/')"
+BASE_PACKAGE_REGEX="${BASE_PACKAGE//./\\.}"
 COMMON_MAIN_DIR="$ROOT_DIR/shared/src/commonMain/kotlin/$BASE_PACKAGE_PATH"
 DOMAIN_DIR="$COMMON_MAIN_DIR/domain"
 DATA_DIR="$COMMON_MAIN_DIR/data"
