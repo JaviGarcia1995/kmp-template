@@ -1,0 +1,17 @@
+<resources>
+    <string name="common_back">Back</string>
+    <string name="common_save">Save</string>
+    <string name="notes_list_title">Notes</string>
+    <string name="notes_add">Add note</string>
+    <string name="notes_empty_title">No notes yet</string>
+    <string name="notes_empty_body">Create your first note to see it here.</string>
+    <string name="notes_editor_new_title">New note</string>
+    <string name="notes_editor_edit_title">Edit note</string>
+    <string name="notes_title_label">Title</string>
+    <string name="notes_content_label">Content</string>
+    <string name="notes_delete">Delete</string>
+    <string name="notes_error_load">Notes could not be loaded.</string>
+    <string name="notes_error_save">The note could not be saved.</string>
+    <string name="notes_error_delete">The note could not be deleted.</string>
+    <string name="notes_error_not_found">The requested note was not found.</string>
+</resources>

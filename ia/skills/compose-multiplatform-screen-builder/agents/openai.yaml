@@ -1,0 +1,4 @@
+interface:
+  display_name: "Compose Screen Designer"
+  short_description: "Design simple, reusable Compose Multiplatform screens"
+  default_prompt: "Design a Compose Multiplatform screen following clean architecture, composable reuse, and avoiding overengineering."

@@ -1,0 +1,17 @@
+<resources>
+    <string name="common_back">Atrás</string>
+    <string name="common_save">Guardar</string>
+    <string name="notes_list_title">Notas</string>
+    <string name="notes_add">Añadir nota</string>
+    <string name="notes_empty_title">Todavía no hay notas</string>
+    <string name="notes_empty_body">Crea tu primera nota para verla aquí.</string>
+    <string name="notes_editor_new_title">Nueva nota</string>
+    <string name="notes_editor_edit_title">Editar nota</string>
+    <string name="notes_title_label">Título</string>
+    <string name="notes_content_label">Contenido</string>
+    <string name="notes_delete">Eliminar</string>
+    <string name="notes_error_load">No se han podido cargar las notas.</string>
+    <string name="notes_error_save">No se ha podido guardar la nota.</string>
+    <string name="notes_error_delete">No se ha podido eliminar la nota.</string>
+    <string name="notes_error_not_found">No se ha encontrado la nota solicitada.</string>
+</resources>

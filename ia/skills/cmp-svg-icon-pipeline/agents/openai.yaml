@@ -1,0 +1,4 @@
+interface:
+  display_name: "CMP SVG Icon Pipeline"
+  short_description: "Convert SVG and integrate icons in CMP, Android, and iOS"
+  default_prompt: "Add this SVG icon to the Compose Multiplatform project and complete the Android and iOS pipeline with a simple, verifiable integration."

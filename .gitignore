@@ -1,0 +1,34 @@
+# Operating system
+.DS_Store
+Thumbs.db
+
+# IDEs and local tooling
+.idea/
+.vscode/
+.claude/settings.local.json
+*.iml
+local.properties
+
+# Xcode
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# Gradle and Kotlin
+.gradle/
+.kotlin/
+**/build/
+*.kotlin_module
+
+# Android
+.externalNativeBuild/
+.cxx/
+captures/
+*.apk
+*.ap_
+*.aab
+
+# Signing and local secrets
+*.jks
+*.keystore
+keystore.properties
