@@ -14,13 +14,24 @@ NAV_DIR="$COMMON_MAIN_DIR/navigation"
 
 FAILED=0
 
+search_code() {
+  local pattern="$1"
+  local target="$2"
+
+  if command -v rg >/dev/null 2>&1; then
+    rg -n "$pattern" "$target"
+  else
+    grep -R -n -E --include="*.kt" --include="*.kts" "$pattern" "$target"
+  fi
+}
+
 check_no_forbidden_imports() {
   local target_dir="$1"
   local label="$2"
   local forbidden_pattern="$3"
   local message="$4"
 
-  if rg -n "^import ${BASE_PACKAGE_REGEX}\\.(${forbidden_pattern})\\." "$target_dir"; then
+  if search_code "^import ${BASE_PACKAGE_REGEX}\\.(${forbidden_pattern})\\." "$target_dir"; then
     echo ""
     echo "[ARCH GUARD] $label $message"
     FAILED=1
@@ -31,7 +42,7 @@ check_no_forbidden_apis() {
   local pattern="$1"
   local message="$2"
 
-  if rg -n "$pattern" "$COMMON_MAIN_DIR"; then
+  if search_code "$pattern" "$COMMON_MAIN_DIR"; then
     echo ""
     echo "[ARCH GUARD] $message"
     FAILED=1
