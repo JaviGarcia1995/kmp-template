@@ -30,6 +30,10 @@ domain -> data -> presentation -> ui
 - Use `DispatcherProvider` instead of direct platform dispatchers.
 - Use `TimeProvider` instead of reading system time directly.
 - Keep platform implementations in `androidMain` and `iosMain`.
+- Keep the Compose Resources bridge in `androidApp/build.gradle.kts`. AGP 9 consumes
+  local Android-KMP projects as JARs, so shared Compose assets must be added to the
+  application through the Variant API. Verify the final APK contains both default
+  and localized `strings.commonMain.cvr` files after changing this integration.
 
 ## Dependencies
 
