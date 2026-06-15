@@ -43,12 +43,16 @@ class SqlDelightNotesDataSource(
         title: String,
         content: String,
         updatedAt: Long
-    ) = withContext(dispatchers.io) {
-        queries.updateNote(title, content, updatedAt, id)
+    ) {
+        withContext(dispatchers.io) {
+            queries.updateNote(title, content, updatedAt, id)
+        }
     }
 
-    override suspend fun deleteNote(id: Long) = withContext(dispatchers.io) {
-        queries.deleteNote(id)
+    override suspend fun deleteNote(id: Long) {
+        withContext(dispatchers.io) {
+            queries.deleteNote(id)
+        }
     }
 
     private fun com.example.kmptemplate.database.Note.toLocal() =

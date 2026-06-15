@@ -14,8 +14,8 @@ kotlinxSerialization = "1.11.0"
 kotlinxDatetime = "0.8.0"
 
 # KMP Libraries
-sqldelight = "2.0.2"
-koin = "4.0.1"
+sqldelight = "2.3.2"
+koin = "4.2.2"
 composeMultiplatform = "1.11.1"
 composeMaterial3 = "1.9.0"
 
