@@ -1,8 +1,8 @@
 [versions]
 # Android & Kotlin
 androidGradlePlugin = "8.10.0"
-kotlin = "2.2.0"
-kotlinMultiplatform = "2.2.0"
+kotlin = "2.4.0"
+kotlinMultiplatform = "2.4.0"
 
 # AndroidX Libraries
 activityCompose = "1.10.1"
@@ -17,7 +17,7 @@ kotlinxDatetime = "0.5.0"
 # KMP Libraries
 sqldelight = "2.0.2"
 koin = "4.0.1"
-composeMultiplatform = "1.9.1"
+composeMultiplatform = "1.11.1"
 
 detekt = "1.23.8"
 
