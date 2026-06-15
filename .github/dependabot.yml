@@ -8,9 +8,29 @@ updates:
       day: "monday"
       time: "07:00"
       timezone: "Europe/Madrid"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 6
     labels:
       - "dependencies"
+    groups:
+      kotlin-compose:
+        patterns:
+          - "org.jetbrains.kotlin*"
+          - "org.jetbrains.compose*"
+      android:
+        patterns:
+          - "com.android.*"
+          - "androidx.*"
+          - "org.jetbrains.androidx.*"
+      kotlinx:
+        patterns:
+          - "org.jetbrains.kotlinx*"
+      data-and-di:
+        patterns:
+          - "app.cash.sqldelight*"
+          - "io.insert-koin*"
+      tooling:
+        patterns:
+          - "io.gitlab.arturbosch.detekt*"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -19,6 +39,10 @@ updates:
       day: "monday"
       time: "07:30"
       timezone: "Europe/Madrid"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 2
     labels:
       - "dependencies"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
