@@ -39,9 +39,9 @@ jobs:
       - name: Test, analyze, and build Android
         run: >
           ./gradlew
-          :shared:testDebugUnitTest
+          :shared:testAndroidHostTest
           :shared:detektShared
-          :shared:compileDebugKotlinAndroid
+          :shared:compileAndroidMain
           :androidApp:assembleDebug
 
   ios:

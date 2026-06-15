@@ -57,9 +57,9 @@ Run the narrowest checks relevant to your change. Before opening a pull request,
 
 ```console
 $ ./scripts/check-layer-boundaries.sh
-$ ./gradlew :shared:testDebugUnitTest
+$ ./gradlew :shared:testAndroidHostTest
 $ ./gradlew :shared:detektShared
-$ ./gradlew :shared:compileDebugKotlinAndroid
+$ ./gradlew :shared:compileAndroidMain
 $ ./gradlew :androidApp:assembleDebug
 $ ./gradlew :shared:compileKotlinIosSimulatorArm64
 $ ./gradlew :shared:linkDebugFrameworkIosSimulatorArm64
@@ -78,4 +78,3 @@ A pull request should:
 - keep Android and iOS buildable;
 - update documentation when behavior or setup changes;
 - list validations that were run and any remaining limitations.
-

@@ -44,9 +44,9 @@ Run the narrowest applicable checks after each iteration:
 
 ```bash
 ./scripts/check-layer-boundaries.sh
-./gradlew :shared:testDebugUnitTest
+./gradlew :shared:testAndroidHostTest
 ./gradlew :shared:detektShared
-./gradlew :shared:compileDebugKotlinAndroid
+./gradlew :shared:compileAndroidMain
 ./gradlew :androidApp:assembleDebug
 ./gradlew :shared:compileKotlinIosSimulatorArm64
 ```

@@ -103,9 +103,9 @@ Run the checks relevant to your change:
 
 ```console
 $ ./scripts/check-layer-boundaries.sh
-$ ./gradlew :shared:testDebugUnitTest
+$ ./gradlew :shared:testAndroidHostTest
 $ ./gradlew :shared:detektShared
-$ ./gradlew :shared:compileDebugKotlinAndroid
+$ ./gradlew :shared:compileAndroidMain
 $ ./gradlew :androidApp:assembleDebug
 $ ./gradlew :shared:compileKotlinIosSimulatorArm64
 $ ./gradlew :shared:linkDebugFrameworkIosSimulatorArm64

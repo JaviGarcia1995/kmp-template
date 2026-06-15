@@ -110,7 +110,7 @@ If exceeded, split into iterations and close a stable version first.
 
 ## Minimum Validation
 1. `./scripts/check-layer-boundaries.sh`
-2. `./gradlew :shared:compileDebugKotlinAndroid`
+2. `./gradlew :shared:compileAndroidMain`
 3. `./gradlew :shared:detektShared`
 4. Manual verification of the affected main flow.
 

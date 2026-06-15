@@ -33,6 +33,6 @@
 3. Limit changes to requested scope (UI icon vs launcher vs both).
 
 ## 5) Minimum validation
-1. `./gradlew :shared:compileDebugKotlinAndroid`
+1. `./gradlew :shared:compileAndroidMain`
 2. If Android launcher was modified: compile Android app.
 3. Manual visual verification on affected screen.
