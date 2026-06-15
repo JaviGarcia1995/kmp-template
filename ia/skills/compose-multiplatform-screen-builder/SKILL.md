@@ -56,7 +56,7 @@ If critical persistence, public-contract, or global-navigation information is mi
 ## Validation Checklist
 Execute according to scope:
 1. `./scripts/check-layer-boundaries.sh`
-2. `./gradlew :shared:compileDebugKotlinAndroid`
+2. `./gradlew :shared:compileAndroidMain`
 3. Tests for affected feature if they exist.
 4. Manual verification: navigation, scroll, main callbacks.
 

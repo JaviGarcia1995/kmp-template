@@ -1,11 +1,35 @@
+import org.gradle.api.DefaultTask
 import org.gradle.api.GradleException
+import org.gradle.api.file.DirectoryProperty
+import org.gradle.api.file.FileSystemOperations
+import org.gradle.api.tasks.InputDirectory
+import org.gradle.api.tasks.OutputDirectory
+import org.gradle.api.tasks.TaskAction
 import java.util.Properties
+import javax.inject.Inject
+
+abstract class CopySharedComposeResources : DefaultTask() {
+    @get:InputDirectory
+    abstract val inputDirectory: DirectoryProperty
+
+    @get:OutputDirectory
+    abstract val outputDirectory: DirectoryProperty
+
+    @get:Inject
+    abstract val fileSystemOperations: FileSystemOperations
+
+    @TaskAction
+    fun copyResources() {
+        fileSystemOperations.sync {
+            from(inputDirectory)
+            into(outputDirectory)
+        }
+    }
+}
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
 }
 
 val keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -17,6 +41,19 @@ val keystoreProperties = Properties().apply {
 
 fun signingProperty(name: String): String =
     keystoreProperties.getProperty(name) ?: throw GradleException("Missing $name in keystore.properties")
+
+val sharedComposeResources =
+    project(":shared").layout.buildDirectory.dir(
+        "generated/assets/copyAndroidMainComposeResourcesToAndroidAssets"
+    )
+
+val copySharedComposeResources = tasks.register<CopySharedComposeResources>(
+    "copySharedComposeResources"
+) {
+    dependsOn(":shared:copyAndroidMainComposeResourcesToAndroidAssets")
+    inputDirectory.set(sharedComposeResources)
+    outputDirectory.set(layout.buildDirectory.dir("generated/sharedComposeResources"))
+}
 
 android {
     namespace = "com.example.kmptemplate.android"
@@ -64,13 +101,18 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     
-    kotlinOptions {
-        jvmTarget = "11"
-    }
-    
     buildFeatures {
         compose = true
-        buildConfig = true
+    }
+}
+
+// AGP 9 consumes local Android-KMP projects as JARs, which do not carry Compose assets.
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        variant.sources.assets?.addGeneratedSourceDirectory(
+            copySharedComposeResources,
+            CopySharedComposeResources::outputDirectory
+        )
     }
 }
 

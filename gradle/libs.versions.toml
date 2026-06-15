@@ -1,8 +1,7 @@
 [versions]
 # Android & Kotlin
-androidGradlePlugin = "8.10.0"
-kotlin = "2.2.0"
-kotlinMultiplatform = "2.2.0"
+androidGradlePlugin = "9.2.1"
+kotlin = "2.4.0"
 
 # AndroidX Libraries
 activityCompose = "1.10.1"
@@ -17,7 +16,8 @@ kotlinxDatetime = "0.8.0"
 # KMP Libraries
 sqldelight = "2.0.2"
 koin = "4.0.1"
-composeMultiplatform = "1.9.1"
+composeMultiplatform = "1.11.1"
+composeMaterial3 = "1.9.0"
 
 detekt = "1.23.8"
 
@@ -35,6 +35,11 @@ kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime",
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
 
 # KMP Libraries
+compose-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", version.ref = "composeMultiplatform" }
+compose-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "composeMultiplatform" }
+compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "composeMaterial3" }
+compose-ui = { group = "org.jetbrains.compose.ui", name = "ui", version.ref = "composeMultiplatform" }
+compose-resources = { group = "org.jetbrains.compose.components", name = "components-resources", version.ref = "composeMultiplatform" }
 sqldelight-runtime = { group = "app.cash.sqldelight", name = "runtime", version.ref = "sqldelight" }
 sqldelight-driver-android = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqldelight" }
 sqldelight-driver-ios = { group = "app.cash.sqldelight", name = "native-driver", version.ref = "sqldelight" }
@@ -46,15 +51,14 @@ koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = 
 [plugins]
 # Android Plugins
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
-android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "androidGradlePlugin" }
 
 # Kotlin Plugins
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 # KMP Plugins
-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlinMultiplatform" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
 
 # Other Plugins

@@ -29,7 +29,7 @@ See operational details and checklist in:
 - [references/pipeline.md](references/pipeline.md)
 
 ## Validation Checklist
-1. `./gradlew :shared:compileDebugKotlinAndroid`
+1. `./gradlew :shared:compileAndroidMain`
 2. Verify generated imports/resources in `shared`.
 3. If Android launcher changed: compile `androidApp` and verify icon.
 4. If iOS changes were made and module is available: validate full `AppIcon.appiconset`.
