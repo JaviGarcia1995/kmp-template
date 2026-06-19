@@ -89,6 +89,18 @@ Apply SOLID as a decision aid, never as a mandatory source of extra structure.
 - Keep related screens structurally consistent when that reduces cognitive load.
 - Prefer UI contracts shaped as `State + callbacks + Modifier`.
 
+### Compose Accessibility Semantics
+- Do not use `Modifier.clickable` without a semantic role in custom interactive components. For simple actions, use `clickable(role = Role.Button, ...)`.
+- Use `clickable` only for stateless actions: open detail, go back, close, navigate, reset, open a guide, or run a one-off action.
+- Use `selectable(selected = ..., role = Role.RadioButton, ...)` for single-choice groups: Yes/No, language, virtue, check-in level, or mutually exclusive options. Add `selectableGroup()` to the group container.
+- Use `toggleable(value = ..., role = Role.Checkbox/Switch, ...)` for on/off or multi-select state: selectable chips, favorites, switches, or checkboxes.
+- For expandable/collapsible UI, use `clickable(role = Role.Button, ...)` and add `semantics { stateDescription = ... }` with localized strings such as `Expanded`/`Collapsed`.
+- Do not replace every `clickable` with `selectable`; use `selectable` only when the user is choosing a stateful option. A row that opens a screen remains a button, not a radio button.
+- Do not communicate state only through color or border. Selected, enabled, expanded, and error states must have equivalent accessibility semantics.
+- Keep accessibility text in resources; avoid hardcoded `contentDescription`, `stateDescription`, or semantic labels.
+- Preserve native component semantics when possible: prefer `Button`, `IconButton`, `Checkbox`, `Switch`, `RadioButton`, and `Tab` before building custom semantics by hand.
+- Keep interactive targets at least 48dp in both dimensions unless an existing design-system component already guarantees this.
+
 ### Blocked Anti-patterns
 - Designing for unrequested hypothetical scenarios.
 - Duplicating the same logic in Screen/ViewModel/Repository if it can live in one place.
@@ -97,6 +109,7 @@ Apply SOLID as a decision aid, never as a mandatory source of extra structure.
 - Keeping `UiState` fields/flags that are not used in render.
 - Double trigger of the same intent (example: double dismiss, double emit).
 - Creating micro-fragmented files with one trivial function if it can be private/local.
+- Custom interactive Compose UI without explicit role, state semantics, and localized accessibility text.
 
 ### `UseCase` Criteria
 - Create a `UseCase` only if it adds real business logic, source composition, non-trivial validation, or policy.
@@ -166,6 +179,7 @@ Do you confirm I should continue with [option]?
 2. Visible and recoverable error path.
 3. Persistence/reopen behavior (if applicable).
 4. Forward/back navigation without losing critical state.
+5. Accessibility spot-check: custom interactive UI exposes the expected role, state, and localized accessibility text.
 
 ## Minimum Output Artifacts
 1. Archivos modificados por capa (`domain/data/presentation/ui/di`).
