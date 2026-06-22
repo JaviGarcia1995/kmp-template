@@ -13,7 +13,7 @@ plugins {
 kotlin {
     android {
         namespace = "com.example.kmptemplate.shared"
-        compileSdk = 36
+        compileSdk = 37
         minSdk = 24
         withHostTest {}
 
