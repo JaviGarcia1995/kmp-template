@@ -57,7 +57,7 @@ val copySharedComposeResources = tasks.register<CopySharedComposeResources>(
 
 android {
     namespace = "com.example.kmptemplate.android"
-    compileSdk = 36
+    compileSdk = 37
 
     signingConfigs {
         if (keystorePropertiesFile.exists()) {
