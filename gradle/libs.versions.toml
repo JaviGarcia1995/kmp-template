@@ -1,7 +1,7 @@
 [versions]
 # Android & Kotlin
 androidGradlePlugin = "9.2.1"
-kotlin = "2.4.0"
+kotlin = "2.4.10"
 
 # AndroidX Libraries
 activityCompose = "1.13.0"
