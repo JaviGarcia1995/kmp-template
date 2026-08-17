@@ -1,6 +1,6 @@
 [versions]
 # Android & Kotlin
-androidGradlePlugin = "9.2.1"
+androidGradlePlugin = "9.3.1"
 kotlin = "2.4.0"
 
 # AndroidX Libraries
