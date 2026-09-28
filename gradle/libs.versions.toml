@@ -1,11 +1,11 @@
 [versions]
 # Android & Kotlin
-androidGradlePlugin = "9.2.1"
+androidGradlePlugin = "9.4.1"
 kotlin = "2.4.0"
 
 # AndroidX Libraries
 activityCompose = "1.13.0"
-coreKtx = "1.19.0"
+coreKtx = "1.19.1"
 navigationCompose = "2.9.2"
 
 # Kotlin Libraries
